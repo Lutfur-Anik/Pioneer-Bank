@@ -76,11 +76,18 @@
           deposit.addEventListener('click', function(){
          
          const amountNumber=getInputNumber('amount');
-       
+       if(amountNumber<0){
+           alert( 'negative number cannot be allow');
+           
+         document.getElementById('amount').value=''
+       }
+       else{
+           
          updateSpanText('currentDeposit',amountNumber);
          updateSpanText('currentBalance',amountNumber);
 
          document.getElementById('amount').value=''
+       }
 
           
           })
